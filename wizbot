@@ -1,0 +1,17 @@
+import os
+
+def file_rename_bot(directory):
+    # List all files in the directory
+    files = os.listdir(directory)
+
+    # Rename files in the directory
+    for index, file_name in enumerate(files):
+        new_name = f"new_file_{index + 1}.txt"  # Customize the new file name format as needed
+        os.rename(os.path.join(directory, file_name), os.path.join(directory, new_name))
+        print(f"Renamed {file_name} to {new_name}")
+
+# Specify the directory path where files are located
+directory_path = "/path/to/your/directory"
+
+# Call the function to rename files in the specified directory
+file_rename_bot(directory_path)
